@@ -14,7 +14,7 @@ body.modal-open {
 
 /* Specific styles ////////////////////////////////////////////////////////// */
 .color-brand {
-  color: #FF5A5F;
+  color: #446CB3;
 }
 .f-19 {
   font-size: 19px;
@@ -23,12 +23,12 @@ body.modal-open {
 /* Global /////////////////////////////////////////////////////////////////// */
 .primary-btn:focus {
   outline: 0 none;
-  border-color: rgba(247, 0, 7,0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(247, 0, 7, 0.6);
+  border-color: rgba(68,108,179,0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(68,108,179,0.6);
 }
 .primary-btn:hover {
   cursor: pointer;
-  background-color:#f70007; 
+  background-color:#36568f; 
 }
 /* Fonts //////////////////////////////////////////////////////////////////// */
 @font-face {
@@ -118,7 +118,7 @@ body.modal-open {
   border-radius: 4px;
   font-family: Avenir;
   text-align: center;
-  background-color: #FF5A5F;
+  background-color: #446CB3;
   -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;      
@@ -198,7 +198,8 @@ body.modal-open {
   -webkit-animation: colorchange 1.25s infinite;
 }
 /* Comment out during dev, prevent flash */
-/* @keyframes colorchange {
+/* This hurts my eyes lol */
+@keyframes colorchange {
   0%   {background: #e7e7e7;}
   25%  {background: #dadada;}
   50%  {background: #e7e7e7;}
@@ -211,7 +212,7 @@ body.modal-open {
   50%  {background: #e7e7e7;}
   75%  {background:#dadada;}
   100% {background:#e7e7e7;}
-} */
+}
 
 /* Overlay ////////////////////////////////////////////////////////////////// */
 .overlay {
@@ -262,7 +263,7 @@ body.modal-open {
   padding: 18px 0px;
   border-radius: 4px;
   font-family: Avenir;
-  background-color: #FF5A5F;
+  background-color: #446CB3;
   -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;      

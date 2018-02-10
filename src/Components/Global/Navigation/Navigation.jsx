@@ -21,7 +21,7 @@ import Signup from '../Auth/Signup.jsx'
 import Forgot from '../Auth/Forgot.jsx'
 
 // Images
-import logo from '../../../Images/logo.png'
+import logo from '../../../Images/icon.png'
 
 export default class Navigation extends React.Component {
   constructor (props) {
