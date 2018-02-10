@@ -32,7 +32,7 @@ export default class Navigation extends React.Component {
       isOpen: false,
       login: false,
       signup: false,
-      forgot: true
+      forgot: false
     }
 
     // Bind state functions
