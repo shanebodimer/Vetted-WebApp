@@ -2,9 +2,11 @@ import React from 'react'
 
 // Components
 import Skeleton from '../Global/Skeletons/Skeleton.jsx'
+import ResultContainer from './ResultContainer.jsx'
 
 // Utilities
 import { getUrlParam } from '../../Utilities/helpers.jsx'
+import { search } from '../../Utilities/api.jsx'
 
 export default class Results extends React.Component {
   constructor (props) {
@@ -16,15 +18,22 @@ export default class Results extends React.Component {
     // Set initial state
     this.state = {
       query: query,
-      count: 5
+      count: 5,
+      done: false,
+      result: []
     }
+
+    search(query).then(res => {
+      this.setState({
+        result: res,
+        done: true
+      })
+    })
   }
 
   render () {
     return (
       <div className="container-fluid">
-        <Skeleton count={5} />
-        <Skeleton count={5} classProp="d-none d-md-block d-lg-block d-xl-block" />
       </div>
     )
   }

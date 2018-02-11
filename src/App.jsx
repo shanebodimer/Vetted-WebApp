@@ -7,6 +7,7 @@ import Root from './Views/Root.jsx'
 // Public views
 import Landing from './Views/Landing.jsx'
 import Search from './Views/Search.jsx'
+import Business from './Views/Business.jsx'
 
 import Navigation from './Components/Global/Navigation/Navigation.jsx'
 
@@ -22,6 +23,7 @@ export default class App extends React.Component {
         <Root>
           <Route render={props => <Navigation {...props}/>} />
           <Route exact path={'/'} render={props => <Landing {...props} />} />
+          <Route exact path={'/business'} render={props => <Business {...props} />} />
           <Route path={'/search'} render={props => <Search {...props} />} />
         </Root>
       </HashRouter>

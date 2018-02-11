@@ -89,3 +89,33 @@ function validateEmail (email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return re.test(email.toLowerCase())
 }
+
+export const modifyResults = (arr, type, val) => {
+  console.log(arr, type, val)
+
+  switch (type) {
+    case 'state':
+      return arr.filter(arr => arr.State === val)
+    case 'site':
+      console.log('site')
+      if (val === '1') return arr.filter(arr => arr.Website)
+      if (val === '2') return arr.filter(arr => !arr.Website)
+      if (val === '0') return arr
+      break
+    case 'rating':
+      return arr.filter(arr => arr.Rating >= val)
+    case 'popular':
+      return arr.sort(compare)
+  }
+  return arr
+}
+
+function compare (a, b) {
+  let comparison = 0
+  if (a > b) {
+    comparison = 1
+  } else if (a < b) {
+    comparison = -1
+  }
+  return comparison
+}

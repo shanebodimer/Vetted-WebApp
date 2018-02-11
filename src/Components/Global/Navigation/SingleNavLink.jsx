@@ -6,14 +6,15 @@ export default class SingleNavLink extends React.Component {
   render () {
     return (
       <NavItem>
-        <NavLink
+        <a
+          target="blank"
           exact
-          className={`nav-item nav-link ${this.props.class}`}
+          className={`no-link nav-item nav-link ${this.props.class}`}
           activeClassName="active"
-          to={this.props.link}
+          href={this.props.link}
         >
           <i className={`fal fa-fw fa-${this.props.icon}`} /> {this.props.title}
-        </NavLink>
+        </a>
       </NavItem>
     )
   }

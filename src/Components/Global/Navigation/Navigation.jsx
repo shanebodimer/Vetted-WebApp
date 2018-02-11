@@ -114,7 +114,7 @@ export default class Navigation extends React.Component {
 
           {/* Search /////////////////////////////////////////////////////// */}
           {/* As long as not on the homepage, show search */}
-          {window.location.href !== 'http://localhost:3000/#/' && (
+          {window.location.href !== 'https://vetted.springlaunch.com/#/' && (
             <Nav className="mr-auto" navbar>
               <Search size="sm" history={this.props.history} />
             </Nav>
@@ -133,8 +133,12 @@ export default class Navigation extends React.Component {
             {/* Right ////////////////////////////////////////////////////// */}
             <Nav className="ml-auto" navbar>
               <SingleNavLink
+                link={'https://chrome.google.com/webstore/category/extensions?hl=en'}
+                title={'Get the extension'}
+              />
+              {/* <SingleNavLink
                 link={'/signup'}
-                title={'Rent your parking spot'}
+                title={'List your business'}
               />
               <SingleNavLink
                 link={'/help'}
@@ -147,7 +151,7 @@ export default class Navigation extends React.Component {
               <SingleNavItem
                 toggle={this.modalLogin}
                 title={'Login'}
-              />
+              /> */}
             </Nav>
           </Collapse>
         </div>

@@ -12,6 +12,10 @@ export default class Search extends React.Component {
     // Set inital query
     var query = getUrlParam().query ? decodeURIComponent(getUrlParam().query) : ''
 
+    var sub = ''
+    query ? sub = '| Vetted.com' : sub = 'Vetted.com'
+    document.title = query + ' Vetted.com'
+
     // Set initial state
     this.state = {
       query: query,
@@ -37,6 +41,8 @@ export default class Search extends React.Component {
 
     // Relocate if query not empty
     query && this.props.history.push(`search?query=${encodeURIComponent(query)}`)
+
+    window.location.reload()
   }
 
   render () {
