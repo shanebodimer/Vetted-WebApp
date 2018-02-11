@@ -24,7 +24,7 @@ export default class ResultContainer extends React.Component {
                   <CardText>{!item.Description && <i>No description found</i>}</CardText>
                   <Link to={`/business?id=${item.Duns}`}><button className="primary-btn biz-btn">Learn more</button></Link>
                   {item.Website && (
-                    <a href={`${item.Website}`} target="blank"><button className="primary-btn biz-2nd-btn">Visit site</button></a>
+                    <a href={`https://${item.Website.slice(7)}`} target="blank"><button className="primary-btn biz-2nd-btn">Visit site</button></a>
                   )}
                 </CardBody>
               </Card>

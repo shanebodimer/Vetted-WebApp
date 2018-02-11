@@ -114,7 +114,7 @@ export default class Navigation extends React.Component {
 
           {/* Search /////////////////////////////////////////////////////// */}
           {/* As long as not on the homepage, show search */}
-          {window.location.href !== 'https://vetted.springlaunch.com/#/' && (
+          {window.location.href !== 'https://springlaunch.com/vetted/#/' && (
             <Nav className="mr-auto" navbar>
               <Search size="sm" history={this.props.history} />
             </Nav>

@@ -27,7 +27,7 @@ if (!localStorage.getItem('state')) {
 export const search = (query) =>
   axios
     .post(
-      `http://vetted.springlaunch.com/actions/search.php?query=${query}`,
+      `https://vetted.springlaunch.com/actions/search.php?query=${query}`,
       {},
       { headers: { 'Content-Type': 'application/json' } }
     )
@@ -44,7 +44,7 @@ export const search = (query) =>
 export const searchHot = () =>
   axios
     .post(
-      `http://vetted.springlaunch.com/actions/searchHot.php`,
+      `https://vetted.springlaunch.com/actions/searchHot.php`,
       {},
       { headers: { 'Content-Type': 'application/json' } }
     )
@@ -61,7 +61,7 @@ export const searchHot = () =>
 export const searchNear = (near) =>
   axios
     .post(
-      `http://vetted.springlaunch.com/actions/searchNear.php?state=${near}`,
+      `https://vetted.springlaunch.com/actions/searchNear.php?state=${near}`,
       {},
       { headers: { 'Content-Type': 'application/json' } }
     )
@@ -78,7 +78,7 @@ export const searchNear = (near) =>
 export const getBiz = (id) =>
   axios
     .post(
-      `http://vetted.springlaunch.com/actions/getBiz.php?id=${id}`,
+      `https://vetted.springlaunch.com/actions/getBiz.php?id=${id}`,
       {},
       { headers: { 'Content-Type': 'application/json' } }
     )
@@ -95,7 +95,7 @@ export const getBiz = (id) =>
 export const updateRating = (rate, id) =>
   axios
     .post(
-      `http://vetted.springlaunch.com/actions/updateRating.php?rate=${rate}&id=${id}`,
+      `https://vetted.springlaunch.com/actions/updateRating.php?rate=${rate}&id=${id}`,
       {},
       { headers: { 'Content-Type': 'application/json' } }
     )

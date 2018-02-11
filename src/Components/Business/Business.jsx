@@ -74,7 +74,7 @@ export default class Business extends React.Component {
           <div className="biz-title">
             <h1>{this.state.result.BusinessName}</h1>
             {this.state.result.Website && (
-              <a href={`${this.state.result.Website}`} target="blank"><button className="primary-btn biz-2nd-btn">Visit website</button></a>
+              <a href={`https://${this.state.result.Website.slice(7)}`} target="blank"><button className="primary-btn biz-2nd-btn">Visit website</button></a>
             )}
           </div>
 
