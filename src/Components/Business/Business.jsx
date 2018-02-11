@@ -67,7 +67,7 @@ export default class Business extends React.Component {
     return (
 
       <div className="border-top">
-        {!this.state.result && <div className="full"> </div>}
+
         <div className="container">
           <br />
 

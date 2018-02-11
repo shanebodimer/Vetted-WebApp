@@ -483,11 +483,6 @@ input[type="color"]:focus,
 .biz-title h1 {
   margin: 0px;
 }
-.full {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-}
 
 /* Small */
 .link { color: #446CB3 !important; }
