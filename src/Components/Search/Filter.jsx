@@ -35,7 +35,7 @@ export default class Navigation extends React.Component {
       site: 0,
       rating: 0,
       popular: 0,
-      show: 0
+      show: []
     }
 
     search(query).then(res => {
