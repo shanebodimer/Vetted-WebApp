@@ -66,6 +66,7 @@ export const searchNear = (near) =>
       { headers: { 'Content-Type': 'application/json' } }
     )
     .then(function (response) {
+      console.log('near', near)
       console.log(response.data)
       return response.data
     })

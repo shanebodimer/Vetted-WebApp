@@ -24,7 +24,13 @@ export default class Items extends React.Component {
       })
     })
 
-    searchNear(localStorage.getItem('state')).then(res => {
+    var loc = 'MO'
+    console.log(localStorage.getItem('state'))
+
+    localStorage.getItem('state') ? loc = localStorage.getItem('state') : loc = 'MO'
+    if (localStorage.getItem('state') === 'US') { loc = 'MO' }
+
+    searchNear(loc).then(res => {
       this.setState({
         resultNear: res,
         done: true
