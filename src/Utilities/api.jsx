@@ -1,25 +1,30 @@
-import React from 'react'
-import axios from 'axios'
+import React from "react";
+import axios from "axios";
 
 // If no location stored
-if (!localStorage.getItem('state')) {
+if (!localStorage.getItem("state")) {
   // Get position, call function
-  navigator.geolocation.getCurrentPosition(showPosition)
+  navigator.geolocation.getCurrentPosition(showPosition);
 
   // Get state from position
-  function showPosition (position) {
-    var url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude + ',' + position.coords.longitude}&key=AIzaSyBWeMU1MHTGjl4QKTW7cUPZHOvXd5_zkfk`
-    var method = 'GET'
-    var shouldBeAsync = true
-    var request = new XMLHttpRequest()
-    request.open(method, url, shouldBeAsync)
-    request.send()
+  function showPosition(position) {
+    var url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${
+      position.coords.latitude + "," + position.coords.longitude
+    }&key=AIzaSyBWeMU1MHTGjl4QKTW7cUPZHOvXd5_zkfk`;
+    var method = "GET";
+    var shouldBeAsync = true;
+    var request = new XMLHttpRequest();
+    request.open(method, url, shouldBeAsync);
+    request.send();
 
     // Execute on load and store
     request.onload = function () {
-      var data = JSON.parse(request.responseText)
-      localStorage.setItem('state', data.results[0].address_components[5].short_name)
-    }
+      var data = JSON.parse(request.responseText);
+      localStorage.setItem(
+        "state",
+        data.results[0].address_components[5].short_name
+      );
+    };
   }
 }
 
@@ -27,84 +32,89 @@ if (!localStorage.getItem('state')) {
 export const search = (query) =>
   axios
     .post(
-      `https://vetted.springlaunch.com/actions/search.php?query=${query}`,
+      `https://shanebodimer.com/project/vetted_api/actions/search.php?query=${query}`,
       {},
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { "Content-Type": "application/json" } }
     )
     .then(function (response) {
-      console.log(response.data)
-      return response.data
+      console.log(response.data);
+      return response.data;
     })
     .catch(function (error) {
-      console.log(error)
-      return error
-    })
+      console.log(error);
+      return error;
+    });
 
 // Search hot
 export const searchHot = () =>
   axios
     .post(
-      `https://vetted.springlaunch.com/actions/searchHot.php`,
+      `https://shanebodimer.com/project/vetted_api/actions/searchHot.php`,
       {},
-      { headers: { 'Content-Type': 'application/json' } }
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "http://localhost:3000",
+        },
+      }
     )
     .then(function (response) {
-      console.log(response.data)
-      return response.data
+      console.log(response.data);
+      return response.data;
     })
     .catch(function (error) {
-      console.log(error)
-      return error
-    })
+      console.log(error);
+      return error;
+    });
 
 // Search hot
 export const searchNear = (near) =>
   axios
     .post(
-      `https://vetted.springlaunch.com/actions/searchNear.php?state=${near}`,
+      `https://shanebodimer.com/project/vetted_api/actions/searchNear.php?state=${near}`,
       {},
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { "Content-Type": "application/json" } }
     )
     .then(function (response) {
-      console.log('near', near)
-      console.log(response.data)
-      return response.data
+      console.log("near", near);
+      console.log(response.data);
+      return response.data;
     })
     .catch(function (error) {
-      console.log(error)
-      return error
-    })
+      console.log(error);
+      return error;
+    });
 
-    // Search hot
+// Search hot
 export const getBiz = (id) =>
   axios
     .post(
-      `https://vetted.springlaunch.com/actions/getBiz.php?id=${id}`,
+      `https://shanebodimer.com/project/vetted_api/actions/getBiz.php?id=${id}`,
       {},
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { "Content-Type": "application/json" } }
     )
     .then(function (response) {
-      console.log(response.data)
-      return response.data
+      console.log(response.data);
+      return response.data;
     })
     .catch(function (error) {
-      console.log(error)
-      return error
-    })
+      console.log(error);
+      return error;
+    });
 
 // Rate
 export const updateRating = (rate, id) =>
   axios
     .post(
-      `https://vetted.springlaunch.com/actions/updateRating.php?rate=${rate}&id=${id}`,
+      `https://shanebodimer.com/project/vetted_api/actions/updateRating.php?rate=${rate}&id=${id}`,
       {},
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { "Content-Type": "application/json" } }
     )
     .then(function (response) {
-      console.log(response.data)
-      return response.data
+      console.log(response.data);
+      return response.data;
     })
     .catch(function (error) {
-      console.log(error)
-      return error
-    })
+      console.log(error);
+      return error;
+    });
